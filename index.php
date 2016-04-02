@@ -72,7 +72,7 @@ get_header(); ?>
 			?>
 					<header class="archive-header well">
 						<h1 class="archive-title">
-							标签目录：<?php echo single_cat_title( '', false );?>
+							标签：<?php echo single_cat_title( '', false );?>
 						</h1>
 						<?php if ( category_description() ) : // Show an optional category description ?>
 							<div class="archive-meta"><?php echo category_description(); ?></div>
