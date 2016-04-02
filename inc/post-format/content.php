@@ -37,11 +37,11 @@
 //			if (of_get_option('show_thumb') && !has_post_thumbnail() && of_get_option('enable_excerpt')) {
 //				echo '<a href="'.get_permalink().'">' . _9iphp_post_thumbnail(220, 120) . '</a>';
 //			}
-			if(of_get_option('enable_excerpt')){
-				the_excerpt();
-			}else{
+//			if(of_get_option('enable_excerpt')){
+//				the_excerpt();
+//			}else{
 				the_content(''); 
-			}
+//			}
 		?>
 	</div>
 	<footer class="entry-footer clearfix visible-lg visible-md visible-sm">
