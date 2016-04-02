@@ -6,13 +6,13 @@ $layout = of_get_option('side_bar');
 $layout = (empty($layout)) ? 'right_side' : $layout;
 get_header(); ?>
 	<?php if($layout == 'left_side'){ ?>
-		<aside class="col-md-4 hidden-xs hidden-sm">
+		<aside class="col-md-3 hidden-xs hidden-sm">
 			<div id="sidebar">
 				<?php dynamic_sidebar( 'sidebar_single'); ?>
 			</div>
 		</aside>
 	<?php } ?>
-	<section id='main' class='<?php echo ($layout == 'single') ? 'col-md-12' : 'col-md-8'; ?>' >
+	<section id='main' class='<?php echo ($layout == 'single') ? 'col-md-12' : 'col-md-9'; ?>' >
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article class="well clearfix page" id="post">
 				<header class="entry-header">
@@ -33,7 +33,7 @@ get_header(); ?>
 	</section>
 	<!--侧边栏-->
 	<?php if($layout == 'right_side'){ ?>
-		<aside class="col-md-4 hidden-xs hidden-sm">
+		<aside class="col-md-3 hidden-xs hidden-sm">
 			<div id="sidebar">
 				<?php dynamic_sidebar( 'sidebar_single'); ?>
 			</div>

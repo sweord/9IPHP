@@ -45,9 +45,9 @@
     </aside>
     <?php endif; */?>
     <div  class="container clearfix bottomcp">
-        Copyright © 2014 <?php bloginfo('name'); ?> |
-        <?php $site_analytics = of_get_option('site_analytics', false); if($site_analytics){ echo (strpos($site_analytics, '<script') === false) ? '<script>'.$site_analytics.'</script> | ' : $site_analytics . ' | '; } ?>
-        Theme By <a href="http://9iphp.com" title="Specs' Bolg" target="_blank">Specs</a>
+        © 2014-<?php echo date('Y'); ?> <?php bloginfo('name'); ?>
+        <?php $site_analytics = of_get_option('site_analytics', false); if($site_analytics){ echo (strpos($site_analytics, '<script') === false) ? '<script>'.$site_analytics.'</script> ' : $site_analytics . ' '; } ?>
+<!--      Theme By <a href="http://9iphp.com" title="Specs' Bolg" target="_blank">Specs</a>-->
     </div>
     <ul id="jump" class="visible-lg">
         <li><a id="top" href="#top" title="返回顶部" style="display:none;"><i class="fa fa-arrow-circle-up"></i></a></li>

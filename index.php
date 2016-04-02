@@ -10,28 +10,44 @@ get_header(); ?>
             </div>
 		<![endif]-->
 		<?php if($layout == 'left_side'){ ?>
-		<aside class="col-md-4 hidden-xs hidden-sm">
+		<aside class="col-md-3 hidden-xs hidden-sm">
 			<div id="sidebar">
 				<?php dynamic_sidebar( 'sidebar_home'); ?>
 			</div>
 		</aside>
 		<?php } ?>
-        <section id='main' class='<?php echo ($layout == 'single') ? 'col-md-12' : 'col-md-8'; ?>' >
+        <section id='main' class='<?php echo ($layout == 'single') ? 'col-md-12' : 'col-md-9'; ?>' >
 			<!--首页幻灯片-->
 			<?php
 				if(is_home()){
 					specs_slide();
+
+					$args = array(
+						'post_type' => 'post',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'category',
+								'field' => 'slug',
+								'terms' => array('fitness', 'microblog'),
+								'operator' => 'NOT IN',
+							),
+						),
+						'paged' => get_query_var('paged', 1),
+					);
+					global $wp_query;
+					$wp_query = new WP_Query( $args );
+
 				}elseif(is_category()){
 			?>
 					<header class="archive-header well">
 						<h1 class="archive-title">
-							分类目录：<?php echo single_cat_title( '', false );?>
+							分类：<?php echo single_cat_title( '', false );?>
 						</h1>
 						<div class="archive-meta">
 						<?php if ( category_description() ) : // Show an optional category description ?>
 							<?php echo category_description(); ?>
 						<?php else: ?>
-							以下是分类 <?php echo single_cat_title( '', false );?> 下的所有文章
+<!--							以下是分类 --><?php //echo single_cat_title( '', false );?><!-- 下的所有文章-->
 						<?php endif;?>
 						</div>
 					</header>
@@ -91,14 +107,14 @@ get_header(); ?>
 					while ( have_posts() ){
 						the_post();
 						get_template_part( 'inc/post-format/content', get_post_format() );
-						$ads_show_pos = of_get_option('ads_show_pos', false);
-						$ads = of_get_option('ads_index_list', false);
-						$ads_pos = of_get_option('ads_index_list_pos',1);
-						if($ads_show_pos['index'] && $ads){
-							if ($wp_query->current_post == $ads_pos ){
-								echo '<div class="ads_index_list">' . $ads . '</div>';
-							}
-						}
+//						$ads_show_pos = of_get_option('ads_show_pos', false);
+//						$ads = of_get_option('ads_index_list', false);
+//						$ads_pos = of_get_option('ads_index_list_pos',1);
+//						if($ads_show_pos['index'] && $ads){
+//							if ($wp_query->current_post == $ads_pos ){
+//								echo '<div class="ads_index_list">' . $ads . '</div>';
+//							}
+//						}
 					}
 				}else{
 			?>
@@ -106,11 +122,11 @@ get_header(); ?>
 			<?php } ?>
 			<!--首页文章列表模块-->
 			<!--分页-->
-			<?php specs_pages(3);?>
+			<?php specs_pages(4);?>
         </section>
         <!--侧边栏-->
 		<?php if($layout == 'right_side'){ ?>
-		<aside class="col-md-4 hidden-xs hidden-sm">
+		<aside class="col-md-3 hidden-xs hidden-sm">
 			<div id="sidebar">
 				<?php dynamic_sidebar( 'sidebar_home'); ?>
 			</div>

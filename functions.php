@@ -205,8 +205,8 @@ function twentytwelve_wp_title( $title, $sep ) {
     $site_description = get_bloginfo( 'description', 'display' );
     if ( $site_description && ( is_home() || is_front_page() ) )
         $title = "$title $sep $site_description";
-    if ( $paged >= 2 || $page >= 2 )
-        $title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+//    if ( $paged >= 2 || $page >= 2 )
+//        $title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
     return $title;
 }
 add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
@@ -223,6 +223,8 @@ function specs_theme_scripts() {
         wp_enqueue_style( 'bootstrap-style', $dir . '/inc/bootstrap-3.3.4/css/bootstrap.min.css', array(), '3.2.0');
         wp_enqueue_style( 'awesome-style', $dir . '/inc/font-awesome/css/font-awesome.min.css', array(), '4.1.0');
 		wp_enqueue_style( 'magnific-popup-style', $dir . '/inc/magnific/magnific-popup.css', array(), '2.1.5');
+//        wp_enqueue_style( 'adminlte-style', $dir . '/AdminLTE.min.css', '', '2.3.1');
+        wp_enqueue_style( 'timeline', $dir . '/timeline.css', '', '1.0.0');
         wp_enqueue_style( '9iphp-style', get_stylesheet_uri(), array(), _9IPHP_VERSION);
         if(is_page_template('page-comment-tj.php')){
             wp_enqueue_script( 'highcharts', 'http://code.highcharts.com/highcharts.js', array(), '3.0.10',true);
@@ -230,9 +232,9 @@ function specs_theme_scripts() {
 		if(is_singular()){
 			wp_enqueue_script( 'single', get_template_directory_uri() . '/js/single.js', array(), '1.00', true);
 		}
-		if(!of_get_option('disable_fixed_header')){
-			wp_enqueue_script( 'fixed-top', $dir . '/js/fixed-top.js', array(), _9IPHP_VERSION);
-		}
+//		if(!of_get_option('disable_fixed_header')){
+//			wp_enqueue_script( 'fixed-top', $dir . '/js/fixed-top.js', array(), _9IPHP_VERSION);
+//		}
     }
 }
 add_action('wp_enqueue_scripts', 'specs_theme_scripts');
@@ -426,29 +428,41 @@ function specs_get_post_views($postID){
  * @copyright 2014 all rights reserved
  *
  */
-function specs_pages($range = 5){
+function specs_pages($range = 5)
+{
     global $paged, $wp_query;
-    if ( !$max_page ) {$max_page = $wp_query->max_num_pages;}
-    if($max_page > 1){if(!$paged){$paged = 1;}
-	echo "<ul class='pagination pull-right'>";
-        if($paged != 1){
+
+    if (!$max_page ) {
+        $max_page = $wp_query->max_num_pages;
+    }
+//    echo $max_page + "<br>";
+
+    if ($max_page > 1) {
+        if (!$paged) {
+            $paged = 1;
+        }
+//        echo $paged + "<br>";
+
+	    echo "<ul class='pagination pull-right'>";
+        if ($paged != 1) {
             echo "<li><a href='" . get_pagenum_link(1) . "' class='extend' title='首页'>&laquo;</a></li>";
         }
-        if($paged>1) echo '<li><a href="' . get_pagenum_link($paged-1) .'" class="prev" title="上一页">&lt;</a></li>';
-        if($max_page > $range){
-            if($paged < $range){
+        if ($paged>1)
+            echo '<li><a href="' . get_pagenum_link($paged-1) .'" class="prev" title="上一页">&lt;</a></li>';
+        if ($max_page > $range) {
+            if ($paged < $range) {
                 for($i = 1; $i <= ($range + 1); $i++){
                     echo "<li"; if($i==$paged)echo " class='active'";echo "><a href='" . get_pagenum_link($i) ."'>$i</a></li>";
                 }
             }
-            elseif($paged >= ($max_page - ceil(($range/2)))){
-                for($i = $max_page - $range; $i <= $max_page; $i++){
+            elseif ($paged >= ($max_page - ceil(($range/2)))){
+                for ($i = $max_page - $range; $i <= $max_page; $i++){
                     echo "<li";
-                    if($i==$paged)
+                    if ($i==$paged)
                         echo " class='active'";echo "><a href='" . get_pagenum_link($i) ."'>$i</a></li>";
                 }
             }
-            elseif($paged >= $range && $paged < ($max_page - ceil(($range/2)))){
+            elseif ($paged >= $range && $paged < ($max_page - ceil(($range/2)))){
                 for($i = ($paged - ceil($range/2)); $i <= ($paged + ceil(($range/2))); $i++){
                     echo "<li";
                     if($i==$paged)echo " class='active'";
@@ -456,15 +470,17 @@ function specs_pages($range = 5){
                 }
             }
         }
-        else{
-            for($i = 1; $i <= $max_page; $i++){
+        else {
+            for($i = 1; $i <= $max_page; $i++) {
                 echo "<li";
-                if($i==$paged)echo " class='active'";
+                if ($i==$paged)
+                    echo " class='active'";
                 echo "><a href='" . get_pagenum_link($i) ."'>$i</a></li>";
             }
         }
-        if($paged<$max_page) echo '<li><a href="' . get_pagenum_link($paged+1) .'" class="next" title="下一页">&gt;</a></li>';
-        if($paged != $max_page){
+        if ($paged < $max_page)
+            echo '<li><a href="' . get_pagenum_link($paged+1) .'" class="next" title="下一页">&gt;</a></li>';
+        if ($paged != $max_page){
             echo "<li><a href='" . get_pagenum_link($max_page) . "' class='extend' title='尾页'>&raquo;</a></li>";
         }
         echo "</ul>";
@@ -991,7 +1007,6 @@ function ajax_comment_page_nav(){
     if( 'desc' != get_option('comment_order') ){
         $comments = array_reverse($comments);
     }
-    $max_page = get_comment_pages_count($comments);
     $wp_query->is_singular = true;
     $baseLink = '';
     if ($wp_rewrite->using_permalinks()) {
@@ -1001,7 +1016,7 @@ function ajax_comment_page_nav(){
     wp_list_comments('callback=specs_comment&max_depth=10000&type=comment&avatar_size=50&page=' . $pageid . '&per_page=' . get_option('comments_per_page'), $comments);//注意修改mycomment这个callback
     echo '</ul>';
     echo '<p class="commentnav text-center" data-post-id="'.$postid.'">';
-    paginate_comments_links('current=' . $pageid . '&prev_text=«&next_text=»&total='.$max_page);
+    paginate_comments_links('current=' . $pageid . '&prev_text=«&next_text=»');
     echo '</p>';
     die;
 }

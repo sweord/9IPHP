@@ -10,13 +10,13 @@ $linkcats = $wpdb->get_results("SELECT T1.name AS name FROM $wpdb->terms T1,
 							   AND T2.taxonomy = 'link_category'");
 ?>
 	<?php if($layout == 'left_side'){ ?>
-		<aside class="col-md-4 hidden-xs hidden-sm">
+		<aside class="col-md-3 hidden-xs hidden-sm">
 			<div id="sidebar">
 				<?php dynamic_sidebar( 'sidebar_single'); ?>
 			</div>
 		</aside>
 	<?php } ?>
-	<section id='main' class='<?php echo ($layout == 'single') ? 'col-md-12' : 'col-md-8'; ?>' >
+	<section id='main' class='<?php echo ($layout == 'single') ? 'col-md-12' : 'col-md-9'; ?>' >
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article class="well clearfix page">
 				<header class="entry-header">
@@ -53,7 +53,7 @@ $linkcats = $wpdb->get_results("SELECT T1.name AS name FROM $wpdb->terms T1,
 	</section>
 	<!--侧边栏-->
 	<?php if($layout == 'right_side'){ ?>
-		<aside class="col-md-4 hidden-xs hidden-sm">
+		<aside class="col-md-3 hidden-xs hidden-sm">
 			<div id="sidebar">
 				<?php dynamic_sidebar( 'sidebar_single'); ?>
 			</div>

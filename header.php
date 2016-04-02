@@ -9,7 +9,7 @@
         elseif( is_single() ){
             echo trim(wp_title('',FALSE)).',';
             if ( has_tag() ) {foreach((get_the_tags()) as $tag ) { echo $tag->name.','; } }//循环所有标签
-            foreach((get_the_category()) as $category) { echo $category->cat_name.','; } //循环所有分类目录
+            foreach((get_the_category()) as $category) { echo $category->cat_slug.','; } //循环所有分类目录
         }
         elseif( is_search() ){ the_search_query(); }
         else{ echo trim(wp_title('',FALSE)); }
@@ -125,7 +125,7 @@ switch (of_get_option('background_mode')) {
                 } ?>
                 <form action="<?php echo home_url( '/' ); ?>" method="get" id="searchform" class="navbar-form navbar-right visible-lg" role="search">
                     <div class="form-group">
-                        <input type="text" name='s' id='s' class="form-control" placeholder="这里有你想要的" x-webkit-speech>
+                        <input type="text" name='s' id='s' class="form-control" placeholder="搜索" x-webkit-speech>
                         <button class="btn btn-danger" type="submit"><i class="fa fa-search"></i></button>
                     </div>
                     <!--<button type="submit" class="btn btn-primary">Submit</button>-->

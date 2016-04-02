@@ -5,7 +5,7 @@
 				<?php echo get_the_post_thumbnail($post_id, 'full');?>
 			</div>
 		<?php }?>
-		<p><a title="首页" href="<?php echo get_option('home'); ?>/"><i class="fa fa-home"></i>首页</a> &raquo; <?php $cats = get_the_category(); $cat = $cats[0]; echo get_category_parents($cat->term_id,true," &raquo; "); ?>正文</p>
+<!--		<p><a title="首页" href="--><?php //echo get_option('home'); ?><!--/"><i class="fa fa-home"></i>首页</a> &raquo; --><?php //$cats = get_the_category(); $cat = $cats[0]; echo get_category_parents($cat->term_id,true," &raquo; "); ?><!--正文</p>-->
 		<h1 class="entry-title">
 			<?php the_title(); ?>
 		</h1>
@@ -16,15 +16,15 @@
 				</time>
 				<span class="dot">|</span>
 				<span class="categories-links fa fa-folder-o"> <?php the_category(','); ?></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <?php the_author_posts_link(); ?></span>
+<!--				<span class="dot">|</span>-->
+<!--				<span class="fa fa-user"> --><?php //the_author_posts_link(); ?><!--</span>-->
 			</span>
-			<span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="<?php the_permalink() ?>#comments"><?php comments_number('暂无评论', '1 条评论', '% 条评论'); ?></a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> <?php echo specs_get_post_views(get_the_ID());?> views</span>
-			</span>
+<!--			<span class="visible-lg visible-md visible-sm pull-left">-->
+<!--				<span class="dot">|</span>-->
+<!--				<span class="fa fa-comments-o comments-link"> <a href="--><?php //the_permalink() ?><!--#comments">--><?php //comments_number('暂无评论', '1 条评论', '% 条评论'); ?><!--</a></span>-->
+<!--				<span class="dot">|</span>-->
+<!--				<span class="fa fa-eye"> --><?php //echo specs_get_post_views(get_the_ID());?><!-- views</span>-->
+<!--			</span>-->
 		</div>
 
 	</header>
@@ -45,7 +45,12 @@
 	<footer class="entry-footer">
 		<div class="footer-tag clearfix">
 			<div class="pull-left">
-				<?php if ( get_the_tags() ) { the_tags('', ' ', ''); } else{ echo '<p class="label label-specs">本文暂无标签</p>';  } ?>
+				<?php
+				if ( get_the_tags() ) { the_tags('', ' ', '');
+				} else {
+//					echo '<p class="label label-specs">本文暂无标签</p>';
+				}
+				?>
 			</div>
 		</div>
 		<?php
@@ -56,9 +61,9 @@
 			}
 		?>
 		<!-- 文章版权信息 -->
-		<h6 class="copyright">
-			转载请注明来源：<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a> - <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
-		</h6>
+<!--		<h6 class="copyright">-->
+<!--			转载请注明来源：<a href="--><?php //the_permalink() ?><!--" title="--><?php //the_title(); ?><!--">--><?php //the_title(); ?><!--</a> - <a href="--><?php //bloginfo('url'); ?><!--" title="--><?php //bloginfo('name'); ?><!--">--><?php //bloginfo('name'); ?><!--</a>-->
+<!--		</h6>-->
 		<!-- 文章版权信息 -->
 		<!--上一篇下一篇-->
 		<ul class="pager clearfix">
