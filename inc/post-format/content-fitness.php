@@ -26,8 +26,8 @@ foreach ($tags as $tag ) {
 				<small class="text-muted pull-right"><i class="fa fa-clock-o"></i><?php the_time(" Y-m-d H:i:s");?></small>
 			</h4>
 		</div>
-		<div class="timeline-body">
-			<?php the_content(''); ?>
-		</div>
+<!--		<div class="timeline-body">-->
+<!--			--><?php //the_content(''); ?>
+<!--		</div>-->
 	</div>
 

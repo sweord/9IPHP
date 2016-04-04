@@ -498,9 +498,17 @@ function specs_pages($range = 5)
  *
  */
 function specs_archives_list() {
-    if( !$output = get_option('specs_archives_list') ){
+	//if( !$output = get_option('specs_archives_list') ){
+    if( 1 ){
         $output = '';
-        $the_query = new WP_Query( 'posts_per_page=-1&ignore_sticky_posts=1&post_status=publish' ); //update: 加上忽略置顶文章
+        $args = array(
+            'cat' => '-5',
+            'posts_per_page' => -1,
+            'ignore_sticky_posts' => 1,
+            'post_status' => 'publish'
+        );
+        $the_query = new WP_Query($args);
+        //$the_query = new WP_Query( 'cat=-5&posts_per_page=-1&ignore_sticky_posts=1&post_status=publish' ); //update: 加上忽略置顶文章
         $year=0; $mon=0; $i=0; $j=0;
         while ( $the_query->have_posts() ) : $the_query->the_post();
             $year_tmp = get_the_time('Y');

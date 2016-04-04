@@ -1,6 +1,7 @@
 <?php
-$layout = of_get_option('side_bar');
-$layout = (empty($layout)) ? 'right_side' : $layout;
+//$layout = of_get_option('side_bar');
+//$layout = (empty($layout)) ? 'right_side' : $layout;
+$layout = 'single';
 get_header(); ?>
 
 <!--[if lt IE 8]>
@@ -21,21 +22,34 @@ get_header(); ?>
 <section id='main' class='<?php echo ($layout == 'single') ? 'col-md-12' : 'col-md-9'; ?>' >
 	<!--文章列表模块-->
 	<?php
-	$posts = query_posts($query_string . '&orderby=date&showposts=10');
+	$total = 20;
+	$posts = query_posts($query_string . '&orderby=date&showposts='.$total);
 	if ( have_posts() ) {
+		echo('<div class="col-md-6">');
 		echo('<ul class="timeline">');
-		$inverted = 0;
 		while ( have_posts() ){
-			if ($inverted)
 				echo('<li class="timeline-inverted">');
-			else
-				echo('<li>');
+			$inverted = !$inverted;
+			the_post();
+			get_template_part( 'inc/post-format/content-fitness', get_post_format() );
+			echo('</li>');
+			if (++$count >= $total/2)
+				break;
+		}
+		echo("</ul>");
+		echo('</div>');
+
+		echo('<div class="col-md-6">');
+		echo('<ul class="timeline">');
+		while ( have_posts() ){
+			echo('<li class="timeline-inverted">');
 			$inverted = !$inverted;
 			the_post();
 			get_template_part( 'inc/post-format/content-fitness', get_post_format() );
 			echo('</li>');
 		}
 		echo('</ul>');
+		echo('</div>');
 	}else{
 		?>
 		<article class="alert alert-warning"><?php _e('非常抱歉，没有相关文章。'); ?></article>
