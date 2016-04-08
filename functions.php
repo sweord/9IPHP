@@ -223,7 +223,6 @@ function specs_theme_scripts() {
         wp_enqueue_style( 'bootstrap-style', $dir . '/inc/bootstrap-3.3.4/css/bootstrap.min.css', array(), '3.2.0');
         wp_enqueue_style( 'awesome-style', $dir . '/inc/font-awesome/css/font-awesome.min.css', array(), '4.1.0');
 		wp_enqueue_style( 'magnific-popup-style', $dir . '/inc/magnific/magnific-popup.css', array(), '2.1.5');
-//        wp_enqueue_style( 'adminlte-style', $dir . '/AdminLTE.min.css', '', '2.3.1');
         wp_enqueue_style( 'timeline', $dir . '/timeline.css', '', '1.0.0');
         wp_enqueue_style( '9iphp-style', get_stylesheet_uri(), array(), _9IPHP_VERSION);
         if(is_page_template('page-comment-tj.php')){

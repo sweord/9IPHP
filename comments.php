@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
-	<?php include(TEMPLATEPATH . '/smiley.php');?>
+<!--	--><?php //include(TEMPLATEPATH . '/smiley.php');?>
 	<?php
 		$args = array(
 			'title_reply'       => '发表评论',
@@ -70,18 +70,18 @@ if ( post_password_required() ) {
 					( $req ? ' required /><span class="form-control-feedback required">*</span>' : ' />' ) .
 					'</span></div></div>',
 
-				'url' =>
-					'<div class="comment-form-url form-group has-feedback">'.
-					'<div class="input-group">'.
-					'<div class="input-group-addon"><i class="fa fa-link"></i></div>'.
-					'<input class="form-control" placeholder="网址" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
-					'" size="30" />' .
-					'</div></div>'
+//				'url' =>
+//					'<div class="comment-form-url form-group has-feedback">'.
+//					'<div class="input-group">'.
+//					'<div class="input-group-addon"><i class="fa fa-link"></i></div>'.
+//					'<input class="form-control" placeholder="网址" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+//					'" size="30" />' .
+//					'</div></div>'
 				)
 			  ),
 			'comment_field' =>  '<div class="comment-form-comment">'.
-				'<textarea class="form-control" id="comment" placeholder="评论写的diao一点，人生才会完美~" name="comment" rows="5" aria-required="true" required  onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};">' .
-				'</textarea><p>'.$smilies.'</p></div>',
+				'<textarea class="form-control" id="comment" placeholder="请使用真实邮箱，任何无意义的邮箱留言都将被直接删除！" name="comment" rows="5" aria-required="true" required  onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};">' .
+				'</textarea><p></p></div>',
 			'comment_notes_before' => '',
 			'comment_notes_after' => ''
 		  );

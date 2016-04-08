@@ -16,15 +16,15 @@
 				</time>
 				<span class="dot">|</span>
 				<span class="categories-links fa fa-folder-o"> <?php the_category(','); ?></span>
-<!--				<span class="dot">|</span>-->
+				<span class="dot">|</span>
 <!--				<span class="fa fa-user"> --><?php //the_author_posts_link(); ?><!--</span>-->
 			</span>
-<!--			<span class="visible-lg visible-md visible-sm pull-left">-->
-<!--				<span class="dot">|</span>-->
-<!--				<span class="fa fa-comments-o comments-link"> <a href="--><?php //the_permalink() ?><!--#comments">--><?php //comments_number('暂无评论', '1 条评论', '% 条评论'); ?><!--</a></span>-->
-<!--				<span class="dot">|</span>-->
-<!--				<span class="fa fa-eye"> --><?php //echo specs_get_post_views(get_the_ID());?><!-- views</span>-->
-<!--			</span>-->
+			<span class="visible-lg visible-md visible-sm pull-left">
+				<span class="dot">|</span>
+				<span class="fa fa-comments-o comments-link"> <a href="<?php the_permalink() ?>#comments"><?php comments_number('暂无评论', '1 条评论', '% 条评论'); ?></a></span>
+				<span class="dot">|</span>
+				<span class="fa fa-eye"> <?php echo specs_get_post_views(get_the_ID());?> views</span>
+			</span>
 		</div>
 
 	</header>
@@ -61,9 +61,9 @@
 			}
 		?>
 		<!-- 文章版权信息 -->
-<!--		<h6 class="copyright">-->
-<!--			转载请注明来源：<a href="--><?php //the_permalink() ?><!--" title="--><?php //the_title(); ?><!--">--><?php //the_title(); ?><!--</a> - <a href="--><?php //bloginfo('url'); ?><!--" title="--><?php //bloginfo('name'); ?><!--">--><?php //bloginfo('name'); ?><!--</a>-->
-<!--		</h6>-->
+		<h6 class="copyright">
+			转载请注明来源：<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a> - <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
+		</h6>
 		<!-- 文章版权信息 -->
 		<!--上一篇下一篇-->
 		<ul class="pager clearfix">
