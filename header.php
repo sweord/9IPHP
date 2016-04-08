@@ -1,5 +1,6 @@
 <!DOCTYPE html><html><head>
     <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
