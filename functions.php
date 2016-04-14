@@ -1324,3 +1324,12 @@ function smilies_reset() {
     );
 }
 smilies_reset();
+
+function is_fitness_tag( $tag_id ) {
+    $desc = tag_description( $tag_id );
+    $pos = strstr($desc, 'fitness');
+    if ($pos == false)
+        return false;
+    else
+        return true;
+}
