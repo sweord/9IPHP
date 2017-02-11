@@ -10,24 +10,15 @@ Tags: 响应式主题,手机主题,Bootstrap
 */
 
 body {
-  /*font-family: "Microsoft Yahei","Courier new";*/
-
   background: #EEE url(images/bg.jpg) repeat scroll 0% 0%;
   color: #333;
-  line-height: 1.5;
-  /*padding-top: 75px;*/
 }
 body, textarea, input, select, button {
-  /*font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', 'Hiragino Sans GB', '微软雅黑', 'WenQuanYi Micro Hei', STHeiti, SimSun, sans-serif;*/
-  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  font-family: "Helvetica Neue","Helvetica","Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
 .entry-content p, .page-content p {
   font-size: 16px;
-  /*text-indent: 2em;*/
-  padding: 4px 0;
-
-  line-height: 2em;
-  /*margin: 15px 0;*/
+  line-height: 2;
 }
 .entry-summary p {
   margin: 0;
@@ -41,25 +32,26 @@ pre, code {
   white-space: pre-wrap;
 }
 h1, h2, h3, h4, h5, h6 {
-  /*margin:0;
-  padding: 0;*/
 }
 .widget h2, .widget h3 {
   margin: 0;
   padding: 0;
 }
 h1 {
-  font-size: 18px;
+  font-size: 20px;
 }
 h2 {
+  font-size: 18px;
+  margin: 27px 0 18px;
+}
+h3, h4, h5, h6 {
   font-size: 16px;
-  padding: 16px 0;
+  margin: 24px 0 16px;
 }
-h3 {
-  font-size: 14px;
-  line-height: 24px;
-  padding: 8px 0;
-}
+h3 { text-indent: 1em; }
+h4 { text-indent: 2em; }
+h5 { text-indent: 3em; }
+h6 { text-indent: 4em; }
 ul, ol, li {
   font-size: 16px;
   line-height: 2em;
@@ -1046,4 +1038,8 @@ footer#body-footer a:hover {
   .affix,.affix-bottom {
     width: 360px;
   }
+}
+
+pre.src span {
+    background-color: transparent !important;
 }
