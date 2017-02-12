@@ -32,28 +32,25 @@ pre, code {
   white-space: pre-wrap;
 }
 h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 .widget h2, .widget h3 {
   margin: 0;
   padding: 0;
 }
 h1 {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 20px;
 }
 h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 12px;
+    font-size: 18px;
 }
 h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 12px;
+    font-size: 16px;
+    
 }
 h4, h5, h6 {
   font-size: 16px;
-  margin: 0 0 12px;
 }
 h3 { text-indent: 1em; }
 h4 { text-indent: 2em; }
@@ -261,8 +258,8 @@ blockquote {
   background-color: #d9534f;
 }
 .entry-title {
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 20px;
+  line-height: 24px;
 }
 .entry-common .entry-title, .page .entry-title {
   margin-bottom: 20px;
