@@ -47,10 +47,10 @@ h2 {
 }
 h3 {
     font-size: 16px;
-    
 }
 h4, h5, h6 {
   font-size: 16px;
+  margin-top: 16px;
 }
 h3 { text-indent: 1em; }
 h4 { text-indent: 2em; }
@@ -61,17 +61,12 @@ ul, ol, li {
   line-height: 2em;
 }
 a, .links li a {
-  /*color: #fda100;*/
-
   color: #080808;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   transition: all .3s
 }
 a:hover, a:focus, .entry-meta a:hover, a.more-link, a.entry-cover:before, .entry-content a, .page-content a, .links li a:hover, #wp-calendar a, .pager a:hover {
-  /*color: #a50606;*/
-  /*color: #c0392b;*/
-
   color: #ff4d3a;
   text-decoration: none;
   -webkit-transition: all .3s;
@@ -80,7 +75,6 @@ a:hover, a:focus, .entry-meta a:hover, a.more-link, a.entry-cover:before, .entry
 }
 .entry-content a:hover, .page-content a:hover, #wp-calendar a:hover {
   color: #a50606;
-  /*border-bottom: 1px dotted #c0392b;*/
 }
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .page-content h1, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6 {
   font-weight: bold;

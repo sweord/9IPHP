@@ -1,4 +1,6 @@
-<article class="well clearfix entry-common" id="post-<?php echo $post->ID?>">
+<div class="row">
+<div class="col-md-2"></div>
+<article class="well clearfix entry-common col-md-9" id="post-<?php echo $post->ID?>">
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() ) {?>
 			<div class="entry-cover hidden-xs">
@@ -138,3 +140,5 @@
 	</footer>
 	<?php comments_template( '', true ); ?>
 </article>
+<div class="col-md-1"></div>
+</div>
