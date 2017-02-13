@@ -18,7 +18,7 @@ body, textarea, input, select, button {
 }
 .entry-content p, .page-content p {
   font-size: 16px;
-  line-height: 2;
+  line-height: 30px;
 }
 .entry-summary p {
   margin: 0;
