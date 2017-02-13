@@ -63,9 +63,9 @@
 			}
 		?>
 		<!-- 文章版权信息 -->
-		<h6 class="copyright">
-			转载请注明来源：<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a> - <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
-		</h6>
+<!--		<h6 class="copyright">-->
+<!--			转载请注明来源：<a href="--><?php //the_permalink() ?><!--" title="--><?php //the_title(); ?><!--">--><?php //the_title(); ?><!--</a> - <a href="--><?php //bloginfo('url'); ?><!--" title="--><?php //bloginfo('name'); ?><!--">--><?php //bloginfo('name'); ?><!--</a>-->
+<!--		</h6>-->
 		<!-- 文章版权信息 -->
 		<!--上一篇下一篇-->
 		<ul class="pager clearfix">
