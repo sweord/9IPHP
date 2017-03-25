@@ -64,49 +64,15 @@ switch (of_get_option('background_mode')) {
 }
 ?>
 <header>
-    <div id="masthead" role="banner" class="hidden-xs">
-		<div class="top-banner">
-			<div class="container">
-				<?php
-				$site_logo = of_get_option('site_logo');
-				if ( !empty( $site_logo ) ) { ?>
-					<a class="brand brand-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<img src="<?php echo $site_logo; ?>" width="200px" height="50px" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-						<h1 class="hidden-xs"><?php if(of_get_option('show_blogdescription')){ ?>
-							<small><?php bloginfo( 'description' ); ?></small>
-							<?php } ?>
-						</h1>
-					</a>
-				<?php }else{ ?>
-					<a class="brand brand-text" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<h1>
-							<?php bloginfo( 'name' ); ?>
-							<?php if(of_get_option('site_description')){ ?>
-								<small><?php bloginfo( 'description' ); ?></small>
-							<?php } ?>
-						</h1>
-					</a>
-				<?php } ?>
-				<div class="top-social pull-right hidden-xs">
-					<?php echo (!of_get_option('social_sina')) 	? '' : '<a id="s_sina_weibo" title="新浪微博" target="_blank" href="' . of_get_option('social_sina') . '" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-weibo"></i></a>'; ?>
-					<?php echo (!of_get_option('social_tencent')) 	? '' : '<a id="s_tencent_weibo" title="腾讯微博" target="_blank" href="' . of_get_option('social_tencent') . '" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-tencent-weibo"></i></a>'; ?>
-					<?php echo (!of_get_option('social_email')) 	? '' : '<a id="s_email" title="EMAIL" target="_blank" href="mailto:' . of_get_option('social_email') . '" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o"></i></a>'; ?>
-					<?php echo (!of_get_option('social_github')) 	? '' : '<a id="s_github" title="GITHUB" target="_blank" href="' . of_get_option('social_github') . '" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-github"></i></a>'; ?>
-					<?php echo (!of_get_option('social_google_plus')) 	? '' : '<a id="s_google_plus" title="GOOGLE+" target="_blank" href="' . of_get_option('social_google_plus') . '" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-google-plus-square"></i></a>'; ?>
-					<?php echo (!of_get_option('social_rss')) 	? '' : '<a id="s_rss" title="RSS" target="_blank" href="' . of_get_option('social_rss') . '" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-rss-square"></i></a>'; ?>
-				</div>
-			</div>
-		</div>
-	</div>
     <nav id="nav" class="navbar navbar-default container-fluid" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="fa fa-bars"></span>
                 </button>
 				<?php $site_logo_mini = of_get_option('site_logo_mini');?>
-				<a class="navbar-brand visible-xs" href="<?php echo home_url( '/' ); ?>" <?php if($site_logo_mini) echo "style='padding:2px 10px'"; ?>>
+				<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" <?php if($site_logo_mini) echo "style='padding:2px 10px'"; ?>>
 					<?php
 					if ( !empty( $site_logo_mini ) ) {?>
 						<img src="<?php echo $site_logo_mini; ?>" width="150px" height="50px" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">

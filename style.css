@@ -198,6 +198,14 @@ a.navbar-brand {
 #masthead .top-banner .top-social a:hover {
   opacity: 1;
 }
+#nav .navbar-header {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: -50px;
+}
+#nav .navbar-brand {
+  font-size: 24px;
+}
 .dropdown-menu > li > a {
   line-height: 2;
 }
