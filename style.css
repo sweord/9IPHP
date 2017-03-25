@@ -93,12 +93,14 @@ a:hover, a:focus, .entry-meta a:hover, a.more-link, a.entry-cover:before, .entry
   border-color: #ff4d3a;
   padding: 15px;
 }
+h4.panel-title {
+  text-indent: 1em;
+}
 .alert-specs {
   background: #f1f1f1;
 }
 .list-group-item {
-  padding: 10px 15px;
-  /*background: none;*/
+  padding: 3px 15px;
 }
 .list-group-item:first-child {
   border-radius: 0;
