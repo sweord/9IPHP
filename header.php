@@ -67,7 +67,7 @@ switch (of_get_option('background_mode')) {
     <nav id="nav" class="navbar navbar-default container-fluid" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="navbar-header col-sm-4 col-md-4 col-lg-4">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="fa fa-bars"></span>
                 </button>
@@ -90,7 +90,7 @@ switch (of_get_option('background_mode')) {
                     wp_list_pages('sort_column=menu_order&title_li=');
                     echo '</ul>';
                 } ?>
-                <form action="<?php echo home_url( '/' ); ?>" method="get" id="searchform" class="navbar-form navbar-right visible-lg" role="search">
+                <form action="<?php echo home_url( '/' ); ?>" method="get" id="searchform" class="navbar-form navbar-right visible-md visible-lg" role="search">
                     <div class="form-group">
                         <input type="text" name='s' id='s' class="form-control" placeholder="搜索" x-webkit-speech>
                         <button class="btn btn-danger" type="submit"><i class="fa fa-search"></i></button>
