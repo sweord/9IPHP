@@ -139,6 +139,10 @@
     margin-top: 6px;
 }
 
+h4.timeline-title {
+    text-indent: 0px;
+}
+
 .timeline-body > p,
 .timeline-body > ul {
     margin-bottom: 0;
