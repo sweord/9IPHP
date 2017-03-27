@@ -29,7 +29,7 @@ body, textarea, input, select, button {
 pre, code {
   word-break: break-all;
   word-wrap: break-word;
-  white-space: pre-wrap;
+  /*white-space: pre-wrap;*/
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
