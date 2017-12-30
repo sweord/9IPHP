@@ -534,7 +534,7 @@ function specs_archives_list() {
                         <ul class="list-group list-archives">'; //输出月份
             }
             //$output .= '<li class="list-group-item">'. get_the_time('d日: ') .'<a href="'. get_permalink() .'" title="'.get_the_title().'">'. get_the_title() .'</a> <span class="badge fa fa-comments"> '. get_comments_number('0', '1', '%') .'</span></li>'; //输出文章日期和标题
-            $output .= '<li class="list-group-item">'. get_the_time('d日: ') .'<a href="'. get_permalink() .'" title="'.get_the_title().'">'. get_the_title() .'</a></li>'; //输出文章日期和标题
+                                                                  $output .= '<li class="list-group-item">'. get_the_time('d日: ') .'<a href="'. get_permalink() .'" title="'.get_the_title().'">'. get_the_title() .'</a> &nbsp;(' . specs_get_post_views(get_the_ID()) . '&nbsp;views)</li>'; //输出文章日期和标题
         endwhile;
         $output .= '</ul></div></div></div>';
         update_option('specs_archives_list', $output);
